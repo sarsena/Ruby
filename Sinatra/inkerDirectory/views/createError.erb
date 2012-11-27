@@ -1,0 +1,10 @@
+<h3>Create New User</h3>
+<div class="alert alert-error">
+  <p>OH Snap! That username already exists please try again</p>
+</div>
+<form class="form-horizontal" action="/create" method="post">
+  <input type="hidden" name="id"></input>
+  <input class="span2" type="text" name="username" id="appendedInput" placeholder="Username">
+  <input type="password" name="password" id="passwordInput" placeholder="Password"></input>
+  <input type="submit" value="Submit" class="btn btn-success"></input>
+</form>
