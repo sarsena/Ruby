@@ -12,20 +12,38 @@ $(function(){
     });
     var leftEye = paper.circle(70, 80, 15);
     leftEye.attr({
-        fill : "#000"
+        fill: "#000"
     });
     var rightEye = paper.circle(140, 80, 15);
     rightEye.attr({
-        fill:"#000"
+        fill: "#000"
     });
     //First (x,y) = starting point; 
     //Second(x,y) = where the curve starts; 
     //Third(x,y) = where the curve actually ends up
     //Last(x,y) = End point;
+    var i = 0;
     var smile = paper.path("M50,140 C70,170 140,170 160,140");
+ 	var barPaper = Raphael(250, 20, 700, 500);
+    var array = [[55, 20, 13, 32, 5, 1, 2, 10], [10, 2, 10, 5, 32, 13, 20, 70]];
+    var label = function(){
+    	i++;
+    	console.log(i);
+    	if (i%2 == 0){
+    		this.flag = barPaper.label(this.bar.x , 360, this.bar.value || "0").insertBefore(this);
+    	}
+    	else
+    	{
+    		this.flag = barPaper.label(this.bar.x , this.bar.y - 20, this.bar.value || "0").insertBefore(this);
+    	}
+    	//console.log([this.bar.x , this.bar.y , this.bar.value]);
 
+    }
     //Creates Paper that is 700 x 300 at 250,50
-    var barPaper = Raphael(250, 50, 700, 300);
-
-    barPaper.barchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {});
+    var test = barPaper.barchart(0, 100, 620, 260, array, {
+    	stacked: true, 
+    	type: "soft", 
+    	colors:["#00CE0D", "#C10A0A"]
+	}).each(label);
+    //barPaper.popup(this.bar.x, this.bar.y, this.bar.value || "0").insertBefore(this);
 });
