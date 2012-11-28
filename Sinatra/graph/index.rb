@@ -17,6 +17,7 @@ __END__
     <script type="text/javascript" src="/js/raphael-min.js"></script>
     <script type="text/javascript" src="/js/g.raphael-min.js"></script>
     <script type="text/javascript" src="/js/g.bar-min.js"></script>
+    <script type="text/javascript" src="js/jquery.qtip-1.0.0-rc3.min.js"></script>
     <script type="text/javascript" src="/js/graph/graph.js"></script>
   </head>
   <body>
